@@ -1,27 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Redirecting...</title>
-  <script>
-    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+<script>
+var ua = navigator.userAgent.toLowerCase();
 
-    // Android
-    if (/android/i.test(userAgent)) {
-      window.location.href = "https://play.google.com/store/apps/details?id=com.septem.fintezMobile";
-    }
-
-    // iOS
-    else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-      window.location.href = "https://apps.apple.com/az/app/fintez-maliyyə-xidmətləri/id6757491923";
-    }
-
-    // Digər cihazlar (PC və s.)
-    else {
-      window.location.href = "https://apps.apple.com/az/app/fintez-maliyyə-xidmətləri/id6757491923";
-    }
-  </script>
-</head>
-<body>
-  <p>Yönləndirilir...</p>
-</body>
-</html>
+if (ua.includes("android")) {
+  window.location.replace("https://play.google.com/store/apps/details?id=com.septem.fintezMobile");
+} else if (ua.includes("iphone") || ua.includes("ipad") || ua.includes("ipod")) {
+  window.location.replace("https://apps.apple.com/az/app/fintez-maliyyə-xidmətləri/id6757491923");
+} else {
+  window.location.replace("https://apps.apple.com/az/app/fintez-maliyyə-xidmətləri/id6757491923");
+}
+</script>
